@@ -12,9 +12,12 @@ import './index.css';
 //todo: set MenuContainer as the default child route (or *IndexPath*) of "/"
 
 ReactDOM.render(
-  <Provider store={store}>
-    <Router history={browserHistory}>
-      <Route path="/" component={AppContainer}>
+  <Provider store={ store }>
+    <Router history={ browserHistory }>
+      <Route path="/" component={ AppContainer }>
+          <IndexRoute component={ MenuContainer } /> 
+	      <Route path="/plate" component={ PlateContainer } />
+	      <Route path="/menu" component={ MenuContainer } />
       </Route>
     </Router>
   </Provider>,

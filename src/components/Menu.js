@@ -5,16 +5,16 @@ import React, { Component } from 'react';
 export default class Menu extends Component {
 
   render () {
+    console.log("this.props.menu-----", this.props.menu);
     return (
       <div>
         <h3>Menu</h3>
         <ul>
-          <li>
-            <button>There should be some menu items here</button>
+        { this.props.menu.map( item => (
+          <li key={ item.id }>
+            <button onClick={ () => this.props.addToPlate(item) }> { item.name }</button>
           </li>
-           <li>
-            <button>There's some dummy data you can put on the state in items.js</button>
-          </li>
+        )) }
         </ul>
       </div>
     );

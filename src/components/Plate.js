@@ -9,8 +9,9 @@ export default class Plate extends Component {
       <div>
         <h3>Plate</h3>
         <ul>
-          <li>Example item</li>
-          <li>You should delete this</li>
+          { this.props.plate.map( (item, index) => (
+            <li key={ index }>{ item.name }</li>
+          ))}
         </ul>
       </div>
     );
